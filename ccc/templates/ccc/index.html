@@ -3,7 +3,20 @@
 {% block title %}Charm City Chess{% endblock %}
 
 {% block content %}
-<main>
-  <p>Hello World! Welcome to the Charm City Chess Club!</p>
+<main class="w3-content" style="max-width:2000px;margin-top:46px">
+  <div class="mySlides w3-display-container w3-center">
+    <img src="/static/club1.png" style="width:100%">
+  </div>
+
+  <welcome class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
+    <h2 class="w3-wide">Charm City Chess Club</h2>
+    <p class="w3-justify">Hello World! Welcome to the Charm City Chess Club!</p>
+  </welcome>
+    
+  <about id="about" class="w3-container w3-content w3-center w3-padding-64">
+    <h2 class="w3-wide">ABOUT</h2>
+    <p class="w3-justify"> Blah blah blah </p>
+  </about>
+      
 </main>
 {% endblock %}
