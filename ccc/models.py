@@ -11,7 +11,9 @@ class Member(models.Model):
                                  blank=True)
     uscf_id = models.BigIntegerField(null=True,
                                      blank=True)
-    chesscom_userid = models.CharField(null=True,
+    chesscom_userid = models.CharField(max_length=100,
+                                       null=True,
                                        blank=True)
-    lichess_userid = models.CharField(null=True,
+    lichess_userid = models.CharField(max_length=100,
+                                      null=True,
                                       blank=True)
