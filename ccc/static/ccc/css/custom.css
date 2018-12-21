@@ -14,3 +14,12 @@
     color: silver;
 }
 
+.logo-small {
+    height: 400px;
+    margin: auto;
+    display: block;
+}
+#mapid {
+    width: 600px;
+    height: 400px;
+}

@@ -2,6 +2,9 @@
 
 {% block title %}Charm City Chess{% endblock %}
 
+{% block head %}
+ {% endblock %}
+
 {% block content %}
 <header>
   <div id="slideshow" class="carousel slide" data-ride="carousel">
@@ -36,7 +39,41 @@
   </div>
 </header>
 
+<about class="container">
+  <div class="row">
+    <div class="col">
+      <img class="logo-small" src="/static/ccc/logo.jpg">
+    </div>
+    <div class="col">
+      <h1 style="text-align: center">Join Us!</h1>
+      <br>
+      <p>Welcome!<br><br>
 
+	Each Monday, we meet for Chess Club at the Barnes & Noble on the Johns Hopkins University campaus (3330 St. Paul St) from 6pm (often a little earlier) to 9pm. Typically, our members meet around the Starbucks coffeeshop inside the B&N store. As always, please be considerate and remember to patronize the coffeeshop that they offer.<br><br>
+	
+	We also hold quarterly USCF rated tournaments with cash prizes! For more information, contact our director, <a href="mailto:BaltimoreChessClub@gmail.com">Alan Horowitz</a>(917-573-5775). </p> 
+    </div>
+    <div class="col">
+      <h3>
+      <center>
+	<div id="mapid"></div>
+      </center>
+    </div>
 
- 
-{% endblock %}
+  </div>
+</about>
+
+<script>
+var mymap = L.map('mapid').setView([39.328630, -76.616330], 15);
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.streets',
+    accessToken: '{{ mapbox_key }}'
+}).addTo(mymap);
+
+var marker = L.marker([39.328630, -76.616330]).addTo(mymap);
+marker.bindPopup("<b>Barnes & Nobel Chess Meetup</b><br>3300 St Paul St<br>Mondays 6pm-9pm<br><a href='https://www.google.com/maps/dir/39.3371014,-76.635183/Barnes+%26+Noble,+3330+St+Paul+St,+Baltimore,+MD+21218/@39.3328584,-76.6300183,16z/data=!3m1!4b1!4m17!1m6!3m5!1s0x89c804e024c09307:0x6c31f5470d3d85b0!2sBarnes+%26+Noble!8m2!3d39.3283141!4d-76.6162632!4m9!1m1!4e1!1m5!1m1!1s0x89c804e024c09307:0x6c31f5470d3d85b0!2m2!1d-76.6162628!2d39.3283139!3e1'>Directions</a>").openPopup();
+</script>
+  
+  {% endblock %}
