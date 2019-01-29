@@ -1,6 +1,19 @@
+body, html {
+    height: 100%;
+    width: 100%;
+}
+.grid-container {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 56px 1fr 125px;
+    grid-template-areas: "nav"
+			 "main"
+			 "footer";
+}
+
 #footer {
-    margin: 0;
-    background: #343a40
+    background: #343a40;
+    height: 125px; 
 }
 #footer li {
     float: left;
