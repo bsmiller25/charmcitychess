@@ -6,49 +6,53 @@
 {% endblock %}
 
 {% block content %}
-<main>
-  <about class="container-fluid">
-    <div class="row">
-      <div class="col">
-	<img class="logo-small" src="/static/ccc/logo.jpg">
-      </div>
-      <div class="col">
-	<h1 style="text-align: center">Join Us!</h1>
-	<br>
-	<p>Welcome!<br><br>
-	  
-	  Each Monday, we meet for Chess Club at the Barnes & Noble on the Johns Hopkins University campus (3330 St. Paul St) from 6pm (often a little earlier) to 9pm. Membership is free! Typically, our members meet around the Starbucks coffeeshop inside the B&N store. As always, please be considerate and remember to patronize the coffeeshop that they offer.<br><br>
-	  
-	  We also hold quarterly USCF rated tournaments with cash prizes! For more information, contact our director, <a href="mailto:charmcitychess@gmail.com">Alan Horowitz</a> (917-573-5775). </p> 
-      </div>
-      <div class="col">
-	<h3>
-	  <center>
-	    <div id="mapid"></div>
-	  </center>
-      </div>
-      
-    </div>
-  </about>
+    <main>
+	<about class="container-fluid">
+	    <div class="row">
+		<div class="col">
+		    <img class="logo-small" src="/static/ccc/logo.jpg">
+		</div>
+		<div class="col">
+		    <h1 style="text-align: center">Join Us!</h1>
+		    <br>
+		    <p>Welcome!<br><br>
+			
+			Each Monday, we meet for Chess Club at the Barnes & Noble on the Johns Hopkins University campus (3330 St. Paul St) from 6pm (often a little earlier) to 9pm. Membership is free! Typically, our members meet around the Starbucks coffeeshop inside the B&N store. As always, please be considerate and remember to patronize the coffeeshop that they offer.<br><br>
+			
+			We also hold quarterly USCF rated tournaments with cash prizes! For more information, contact our director, <a href="mailto:charmcitychess@gmail.com">Alan Horowitz</a> (917-573-5775). </p> 
+		</div>
+		<div class="col">
+		    <h3>
+			<center>
+			    <div id="mapid"></div>
+			</center>
+		</div>
+		
+	    </div>
+	</about>
+	<hr>
+	<center>
+	    <h1>February Tournament!</h1>
+	    <h3>Completed: Highlights coming soon!</h3>
 
-  <center>
-    <h1>Upcoming Tournament!</h1>
-    <img src="/static/ccc/ccccfeb.png" style="width: 50%; height: 50%;">
-  </center>
+	    <p>Congrats to all the participants</p>
 
-  <script>
-    var mymap = L.map('mapid').setView([39.328630, -76.616330], 15);
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox.streets',
-    accessToken: '{{ mapbox_key }}'
-    }).addTo(mymap);
-    
-    var marker = L.marker([39.328630, -76.616330]).addTo(mymap);
-    marker.bindPopup("<b>Barnes & Nobel Chess Meetup</b><br>3300 St Paul St<br>Mondays 6pm-9pm<br>").openPopup();
-  </script>
 
-</main>
+	</center>
+
+	<script>
+	 var mymap = L.map('mapid').setView([39.328630, -76.616330], 15);
+	 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+	     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+	     maxZoom: 18,
+	     id: 'mapbox.streets',
+	     accessToken: '{{ mapbox_key }}'
+	 }).addTo(mymap);
+	 
+	 var marker = L.marker([39.328630, -76.616330]).addTo(mymap);
+	 marker.bindPopup("<b>Barnes & Nobel Chess Meetup</b><br>3300 St Paul St<br>Mondays 6pm-9pm<br>").openPopup();
+	</script>
+
+    </main>
 {% endblock %}
-  
+
