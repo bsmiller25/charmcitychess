@@ -13,3 +13,7 @@ def index(request):
         }
     
     return render(request, 'ccc/index.html', context)
+
+def bylaws(request):
+
+    return render(request, 'ccc/bylaws.html')
