@@ -6,117 +6,36 @@
 {% endblock %}
 
 {% block content %}
-    <main>
-	<about class="container-fluid">
-	    <div class="row">
-		<div class="col">
-		    <img class="logo-small" src="/static/ccc/logo.jpg">
-		</div>
-		<div class="col">
-		    <h1 style="text-align: center">Join Us!</h1>
-		    <br>
-		    <p>Welcome!<br><br>
-			
-			Each Monday, we meet for Chess Club at the Barnes & Noble on the Johns Hopkins University campus (3330 St. Paul St) from 6pm (often a little earlier) to 9pm. Membership is free! Typically, our members meet around the Starbucks coffeeshop inside the B&N store. As always, please be considerate and remember to patronize the coffeeshop that they offer.<br><br>
-			
-			We also hold quarterly USCF rated tournaments with cash prizes! For more information, contact our director, <a href="mailto:charmcitychess@gmail.com">Alan Horowitz</a> (917-573-5775). <br><br>
 
-			Barnes & Nobel has been very generous to us so please do not bring outside food. Instead, patronize their wonderful cafe!			
-		    </p> 
-		</div>
-		<div class="col">
-		    <h3>
-			<center>
-			    <div id="mapid"></div>
-			</center>
-		</div>
-		
-	    </div>
-	</about>
-	<hr>
-	<center>
-	    <h1>June Tournament Results!</h1>
-	    <p>View official tournament results at the <a href="http://www.uschess.org/msa/XtblMain.php?201906294822-10171610">USCF website</a></p>
-	    <h3>Congrats to all our participants!</h3>
-	    <img style="width:65%" src="/static/ccc/photos/2019_06_29_Tourney/winners.jpg">
+    <div class="container">
+
+	<h1>Welcome!</h1>
+
+	<br>
+	
+	<p class="flow-text">    
+	    Each Monday, we meet for Chess Club at the Barnes & Noble on the Johns Hopkins University campus (3330 St. Paul St) from 6pm (often a little earlier) to 9pm. Membership is free! Typically, our members meet around the Starbucks coffeeshop inside the B&N store. As always, please be considerate and remember to patronize the coffeeshop that they offer.<br><br>
 	    
-	    <!--
-		 <div id="slideshow" class="carousel slide" data-ride="carousel" style="width: 65%; margin-bottom: 30px">
-		 <ol class="carousel-indicators">
-		 <li data-target="#slideshow" data-slide-to="0" class="active"></li>
-		 <li data-target="#slideshow" data-slide-to="1"></li>
-		 <li data-target="#slideshow" data-slide-to="2"></li>
-		 <li data-target="#slideshow" data-slide-to="3"></li>
-		 <li data-target="#slideshow" data-slide-to="4"></li>
-		 <li data-target="#slideshow" data-slide-to="5"></li>
-		 
-		 </ol>
-		 <div class="carousel-inner">
-		 <div class="carousel-item active">
-		 <img class="d-block w-100" src="/static/ccc/photos/2018_02_23_Tourney/u12all.jpg" alt="First slide">
-		 <div class="carousel-caption">
-		 <h2>The U1200 Section of our 2019 February Open!</h2>
-		 </div>
-		 </div>
-		 <div class="carousel-item">
-		 <img class="d-block w-100" src="/static/ccc/photos/2018_02_23_Tourney/u12winner1.jpg" alt="Second slide">
-		 <div class="carousel-caption">
-		 <h2>Alan congratulating one of our U1200 winners</h2>
-		 </div>
-		 </div>
-		 <div class="carousel-item">
-		 <img class="d-block w-100" src="/static/ccc/photos/2018_02_23_Tourney/u12winner2.jpg" alt="Third slide">
-		 <div class="carousel-caption">
-		 <h2>Alan congratulating one of our U1200 winners</h2>
-		 </div>
-		 </div>
-		 <div class="carousel-item">
-		 <img class="d-block w-100" src="/static/ccc/photos/2018_02_23_Tourney/u12winner3.jpg" alt="Fourth slide">
-		 <div class="carousel-caption">
-		 <h2>Alan congratulating one of our U1200 winners</h2>
-		 </div>
-		 </div>
-		 <div class="carousel-item">
-		 <img class="d-block w-100" src="/static/ccc/photos/2018_02_23_Tourney/sign.jpg" alt="Fifth slide">
-		 <div class="carousel-caption">
-		 <h2>The February 2018 Charm City Chess Open</h2>
-		 </div>
-		 </div>
-		 <div class="carousel-item">
-		 <img class="d-block w-100" src="/static/ccc/photos/2018_02_23_Tourney/playing.jpg" alt="Sixth slide">
-		 <div class="carousel-caption">
-		 <h2>Open Section Action</h2>
-		 </div>
-		 </div>
+	    We also hold quarterly USCF rated tournaments with cash prizes! For more information, contact our director, <a href="mailto:charmcitychess@gmail.com">Alan Horowitz</a> (917-573-5775). <br><br>
 
+	    Barnes & Nobel has been very generous to us so please do not bring outside food. Instead, patronize their wonderful cafe!			
+	</p>
 
-		 </div>
-		 <a class="carousel-control-prev" href="#slideshow" role="button" data-slide="prev">
-		 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		 <span class="sr-only">Previous</span>
-		 </a>
-		 <a class="carousel-control-next" href="#slideshow" role="button" data-slide="next">
-		 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-		 <span class="sr-only">Next</span>
-		 </a>
-		 </div>
-	    -->	    
+	<div id="mapid"></div>
+	
+    </div>
 
-	</center>
-
-	<script>
-	 var mymap = L.map('mapid').setView([39.328630, -76.616330], 15);
-	 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-	     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-	     maxZoom: 18,
-	     id: 'mapbox.streets',
-	     accessToken: '{{ mapbox_key }}'
-	 }).addTo(mymap);
-	 
-	 var marker = L.marker([39.328630, -76.616330]).addTo(mymap);
-	 marker.bindPopup("<b>Barnes & Nobel Chess Meetup</b><br>3300 St Paul St<br>Mondays 6pm-9pm<br>").openPopup();
-	</script>
-
-    </main>
+    <script>
+     var mymap = L.map('mapid').setView([39.328630, -76.616330], 15);
+     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+	 attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+	 maxZoom: 18,
+	 id: 'mapbox.streets',
+	 accessToken: '{{ mapbox_key }}'
+     }).addTo(mymap);
+     
+     var marker = L.marker([39.328630, -76.616330]).addTo(mymap);
+     marker.bindPopup("<b>Barnes & Nobel Chess Meetup</b><br>3300 St Paul St<br>Mondays 6pm-9pm<br>").openPopup();
+    </script>
+    
 {% endblock %}
-

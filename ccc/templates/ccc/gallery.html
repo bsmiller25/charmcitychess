@@ -1,0 +1,22 @@
+{% extends 'ccc/base.html' %}
+
+{% block title %}Charm City Chess{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+	<h1>{{ tourney }}</h1>
+
+	<div class="carousel">
+	    {% for photo in photos %}
+		<a class="carousel-item""><img src="{{ photo }}"></a>
+	    {% endfor %}
+	</div>
+
+    </div>
+
+    
+{% endblock %}

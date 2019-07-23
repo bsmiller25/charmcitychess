@@ -1,0 +1,53 @@
+<header>
+    <div class="container">
+	<a href="#" data-target="nav-mobile" class="top-nav sidenav-trigger waves-effect waves-light circle hide-on-large-only">
+	    <i class="material-icons">menu</i>
+	</a>
+    </div>
+    <ul id="nav-mobile" class="sidenav sidenav-fixed">
+        <li class="logo">
+	    <a id="logo-container" href="/" class="brand-logo">
+		{% load static %}
+		<object id="front-page-logo" type="image/jpg" data="{% static 'ccc/logo.jpg' %}">Error loading logo</object>
+	    </a>
+	</li>
+
+	<li>
+	    <ul class="collapsible collapsible-accordion">
+		<li>
+		    <a class="collapsible-header waves-effect waves-teal">Gallery</a>
+		    <div class="collapsible-body">
+			<ul>
+			    <li><a href="/gallery/2019_06_29_Tourney">June 2019 Open</a></li>
+			    <li><a href="/gallery/2019_02_23_Tourney">Feb 2019 Open</a></li>
+			</ul>
+		    </div>
+		</li>
+	    </ul>
+	</li>
+
+	<li>
+	    <ul class="collapsible collapsible-accordion">
+		<li>
+		    <a class="collapsible-header waves-effect waves-teal">Tournament Results</a>
+		    <div class="collapsible-body">
+			<ul>
+			    <li><a href="http://www.uschess.org/msa/XtblMain.php?201906294822.0">June 2019 Tournament</a></li>
+			    <li><a href="http://www.uschess.org/msa/XtblMain.php?201902231652.0">February 2019 Tournament</a></li>
+			    <li><a href="http://www.uschess.org/msa/XtblMain.php?201811109162.0">November 2018 Tournament</a></li>
+			</ul>
+		    </div>
+		</li>
+	    </ul>
+	</li>
+
+	<li>
+	    <a href="https://www.facebook.com/groups/charmcitychess/">Facebook</a>
+	</li>
+	<li>
+	    <a href="/bylaws/">Club By-laws</a>
+	</li>
+
+    </ul>
+
+</header>
