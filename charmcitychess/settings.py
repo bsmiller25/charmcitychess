@@ -32,6 +32,7 @@ ALLOWED_HOSTS = [
     'charmcitychess.com',
     'www.charmcitychess.com',
     'charmcitychess.herokuapp.com',
+    'staging-charmcitychess.herokuapp.com',
     '127.0.0.1',
 ]
 
