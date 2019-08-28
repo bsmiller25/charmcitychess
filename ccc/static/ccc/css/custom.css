@@ -50,3 +50,7 @@ ul.sidenav.sidenav-fixed ul.collapsible-accordion .collapsible-body li a {
     height: 100%;
 }
 
+.paypal select {
+    display: block;
+}
+    
