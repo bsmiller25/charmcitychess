@@ -45,3 +45,6 @@ def gallery(request, gal_str):
         'ccc/gallery.html',
         context
     )
+
+def new_tournament(request):
+    return render(request, 'ccc/new_tournament.html')
