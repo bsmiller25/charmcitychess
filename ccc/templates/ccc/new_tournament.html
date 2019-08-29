@@ -1,0 +1,89 @@
+{% extends 'ccc/base.html' %}
+
+{% block title %}Charm City Chess{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+	<div class="row">
+	    <div class="col s12">
+		<h2 class="center-align">Charm City Chess Club 2019 Fall Action Tournament!</h2>
+		
+		<h4>Details</h4>
+		<table>
+		    <tr>
+			<td>Date and Time:</td>
+			<td>October 12th, 9:30am</td>
+		    <tr>
+			<td>Location:</td>
+			<td><a href="https://www.google.com/maps/place/Barnes+%26+Noble+Johns+Hopkins/@39.3285375,-76.6185429,17z/data=!3m1!4b1!4m5!3m4!1s0x89c805bbfdf8a855:0x652c4b853dceebd9!8m2!3d39.3285334!4d-76.6163489">Barnes and Nobel: 3300 St Paul Street, Baltimore MD 21218</a></td>
+		    </tr>
+		    <tr>
+			<td>Open Section:</td>
+			<td>USCF Membership Required<br>
+			    4SS, G/45; d5<br>
+			    Entry Fee: $25, after October 9th $35<br>
+			    Prizes (based on 40 paid entries): 1st-$200, 2nd-$125, 3rd: $75<br>
+			    Top U2000, U1800, U1600, U1400: $70 each<br>
+			    Registration: 9:30am-10:15am, rds 10:30am, 12:30pm, 2:15pm, 4:00pm
+			</td>
+		    </tr>
+		    <tr>
+			<td>U1200 Section:</td>
+			<td>USCF Membership Required<br>
+			    5SS, G/30; d5<br>
+			    Entry Fee: $15, after October 9th $20<br>
+			    Trophies: 1st, 2nd, 3rd<br>
+			    Additional 1 year membership to USCF for players scoring 3.5 or better<br>
+			    Registration: 9:30am-10:15am, rds-10:30am, 12:15pm, 1:30pm, 2:45pm, 4:00pm
+			</td>
+		    </tr>
+		    <tr>
+			<td>Contact Info:</td>
+			<td>charmcitychess@gmail.com, 443-680-7849, 917-573-5775</td>
+		    </tr>
+		</table>
+
+		<br>
+
+		<h4>Registration</h4>
+		<div class="paypal">
+		    
+		    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+			<input type="hidden" name="cmd" value="_xclick">
+			<input type="hidden" name="business" value="charmcitychess@gmail.com">
+			<input type="hidden" name="lc" value="US">
+			<input type="hidden" name="item_name" value="Charm City Chess Club 2019 Fall Action Tournament Registration">
+			<input type="hidden" name="button_subtype" value="services">
+			<input type="hidden" name="currency_code" value="USD">
+			<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted">
+			<table>
+			    <tr><td><input type="hidden" name="on0" value="Section">Section</td></tr><tr><td><select name="os0">
+				<option value="Open">Open $25.00 USD</option>
+				<option value="U1200">U1200 $15.00 USD</option>
+			    </select> </td></tr>
+			    <tr><td><input type="hidden" name="on1" value="Participant Name">Participant Name</td></tr><tr><td><input type="text" name="os1" maxlength="200"></td></tr>
+			    <tr><td><input type="hidden" name="on2" value="Participant USCF ID">Participant USCF ID</td></tr><tr><td><input type="text" name="os2" maxlength="200"></td></tr>
+			    <tr><td><input type="hidden" name="on3" value="Contact Email">Contact Email</td></tr><tr><td><input type="text" name="os3" maxlength="200"></td></tr>
+			</table>
+			<input type="hidden" name="option_select0" value="Open">
+			<input type="hidden" name="option_amount0" value="25.00">
+			<input type="hidden" name="option_select1" value="U1200">
+			<input type="hidden" name="option_amount1" value="15.00">
+			<input type="hidden" name="option_index" value="0">
+			<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+			<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+		    </form>
+
+		</div>
+
+		<hr>
+
+
+	    </div>
+	</div>
+    
+{% endblock %}
