@@ -1,4 +1,5 @@
 import os
+import datetime
 from django.db.models import Sum, Avg, Q, F, Case, Count, When
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -47,4 +48,12 @@ def gallery(request, gal_str):
     )
 
 def new_tournament(request):
-    return render(request, 'ccc/new_tournament.html')
+
+    done = datetime.datetime.today() > datetime.datetime.strptime('2019-10-12', '%Y-%m-%d')
+    earlyreg = datetime.datetime.today() <= datetime.datetime.strptime('2019-10-05', '%Y-%m-%d')
+    context = {
+        'done': done,
+        'earlyreg': earlyreg
+        }
+    
+    return render(request, 'ccc/new_tournament.html', context)
