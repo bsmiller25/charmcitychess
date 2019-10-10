@@ -43,6 +43,7 @@ def new_tournament(request):
     """Open registration for a new tournament"""
     done = datetime.datetime.today() > datetime.datetime.strptime('2019-10-12', '%Y-%m-%d')
     earlyreg = datetime.datetime.today() <= datetime.datetime.strptime('2019-10-05', '%Y-%m-%d')
+    
     context = {
         'done': done,
         'earlyreg': earlyreg
