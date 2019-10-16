@@ -9,10 +9,11 @@
 
     <div class="container">
 	<h1>{{ tourney }}</h1>
-
+	<br>
+	<hr>
 	<div class="carousel">
 	    {% for photo in photos %}
-		<a class="carousel-item""><img src="{{ photo }}"></a>
+		<a class="carousel-item"><img style="height: 100%;" src="{{ photo }}"></a>
 	    {% endfor %}
 	</div>
 
