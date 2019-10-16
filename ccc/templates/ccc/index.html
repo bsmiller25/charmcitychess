@@ -1,28 +1,28 @@
 {% extends 'ccc/base.html' %}
 
-{% block title %}Charm City Chess{% endblock %}
+{% block title %}Charm City Chess -- A Baltimore Chess Club{% endblock %}
 
 {% block head %}
-    <meta name="description" content="The Charm City Chess Club is the best Baltimore chess club around! We meet up weekly and hold USCF tournaments quarterly."
+    <meta name="description" content="The Charm City Chess Club is the best Baltimore chess club around! We meet up weekly and hold USCF tournaments quarterly.">
 {% endblock %}
 
 {% block content %}
-
-    <div class="valign-wrapper center-align red lighten-1">
-	<div class="row">
-	    <h4 class="white-text">Charm City Chess Club 2019 Fall Action Tournament!</h4>
-	    <a href="/new_tournament/" class="waves-effect waves-light btn pulse">More Info</a>
-	    
-	</div>
-    </div>
-
-    <br>
     
+    {% if new_tournament %}
+	<div class="valign-wrapper center-align red lighten-1">
+	    <div class="row">
+		<h4 class="white-text">Charm City Chess Club 2019 Fall Action Tournament!</h4>
+		<a href="/new_tournament/" class="waves-effect waves-light btn pulse">More Info</a>
+		
+	    </div>
+	</div>
+    <br>
+    {% endif %}
     <div class="container">
 	<div class="row">
 	    <div class="col s12">  
 
-		<div class="valign-wrapper center-align amber">
+		<div class="valign-wrapper center-align">
 		    <h2>The Charm City Chess Club</h2>
 		</div>
 		

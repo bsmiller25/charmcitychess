@@ -7,29 +7,27 @@ import pdb
 
 
 def index(request):
-
-    mapbox_key = os.environ.get('MAPBOX_KEY')
+    """Charm City Chess Homepage"""
+    new_tournament = False
     
     context = {
-        'mapbox_key': mapbox_key,
+        'new_tournament': new_tournament,
     }
     
-    return render(
-        request,
-        'ccc/index.html',
-        context
-    )
+    return render(request, 'ccc/index.html')
+
 
 def bylaws(request):
-
+    """Page for displaying the club bylaws"""
     return render(request, 'ccc/bylaws.html')
 
 
 def gallery(request, gal_str):
-
+    """Display photo gallery"""
     nice_str = {
         '2019_02_23_Tourney': 'February 2019 Open',
-        '2019_06_29_Tourney': 'June 2019 Open'
+        '2019_06_29_Tourney': 'June 2019 Open',
+        '2019_10_12_Tourney': 'October 2019 Open',
         }
 
     tourney = nice_str[gal_str]
@@ -48,9 +46,11 @@ def gallery(request, gal_str):
     )
 
 def new_tournament(request):
-
+    """Open registration for a new tournament"""
     done = datetime.datetime.today() > datetime.datetime.strptime('2019-10-12', '%Y-%m-%d')
     earlyreg = datetime.datetime.today() <= datetime.datetime.strptime('2019-10-05', '%Y-%m-%d')
+    
+    
     context = {
         'done': done,
         'earlyreg': earlyreg
