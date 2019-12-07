@@ -48,7 +48,7 @@ def gallery(request, gal_str):
 def new_tournament(request):
     """Open registration for a new tournament"""
     done = datetime.datetime.today() > datetime.datetime.strptime('2019-12-14', '%Y-%m-%d')
-    earlyreg = datetime.datetime.today() <= datetime.datetime.strptime('2019-12-07', '%Y-%m-%d')
+    earlyreg = datetime.datetime.today() <= datetime.datetime.strptime('2019-12-08', '%Y-%m-%d')
     
     
     context = {
