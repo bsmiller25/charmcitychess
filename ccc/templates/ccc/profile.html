@@ -1,0 +1,37 @@
+{% extends 'ccc/base.html' %}
+
+{% block title %}Charm City Chess -- A Baltimore Chess Club{% endblock %}
+
+{% block content %}
+    <div class="container">
+	<h1>Hi, {{ user.username }}!</h1>
+
+	<h4>Member Details</h4>
+	<form action="/accounts/profile" method="post">
+	    <table class="table">
+		<tr>
+		    <td>First Name</td>
+		    <td><input name="fname"></td>
+		</tr>
+		<tr>
+		    <td>Last Name</td>
+		    <td><input name="lname"></td>
+		</tr>
+		<tr>
+		    <td>USCF ID</td>
+		    <td><input name="uscf_id"></td>
+		</tr>
+		<tr>
+		    <td>Chess.com ID</td>
+		    <td><input name="chesscom_id"></td>
+		</tr>
+		<tr>
+		    <td>Lichess.org ID</td>
+		    <td><input name="lichess_id"></td>
+		</tr>
+	    </table>
+	    <button type="submit">Update</button>
+	</form>
+	
+    </div>
+{% endblock %}

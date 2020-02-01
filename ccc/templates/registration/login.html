@@ -1,0 +1,15 @@
+<!-- templates/registration/login.html -->
+{% extends 'ccc/base.html' %}
+
+{% block title %}Charm City Chess -- A Baltimore Chess Club{% endblock %}
+
+{% block content %}
+    <div class="container">
+	<h2>Login</h2>
+	<form method="post">
+	    {% csrf_token %}
+	    {{ form.as_p }}
+	    <button type="submit">Login</button>
+	</form>
+    </div>
+{% endblock %}

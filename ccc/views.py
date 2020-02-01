@@ -1,20 +1,46 @@
 import os
 import datetime
+from django.contrib.auth.decorators import login_required
 from django.db.models import Sum, Avg, Q, F, Case, Count, When
 from django.http import HttpResponse
 from django.shortcuts import render
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
 import pdb
+
+
+def send_email(to_emails, bcc_emails, subj, msg):
+    message = Mail(
+        from_email=('charmcitychess@charmcitychess.com', 'Charm City Chess'),
+        to_emails=to_emails,
+        subject=subj,
+        html_content=msg)
+
+    message.reply_to = 'bsmiller25@gmail.com'
+    message.bcc = bcc_emails
+    
+    try:
+        sg = SendGridAPIClient(os.environ.get('SENDGRID_API'))
+        response = sg.send(message)
+    except Exception as e:
+        print(e.message)
+
 
 
 def index(request):
     """Charm City Chess Homepage"""
-    new_tournament = True
+    new_tournament = False
     
     context = {
         'new_tournament': new_tournament,
     }
     
     return render(request, 'ccc/index.html', context)
+
+@login_required
+def profile(request):
+    """User's profile page"""
+    return render(request, 'ccc/profile.html')
 
 
 def bylaws(request):

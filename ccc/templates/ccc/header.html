@@ -12,6 +12,12 @@
 	    </a>
 	</li>
 
+	{% if user.is_authenticated %}
+	    <li><a href="/accounts/profile">My Profile</a></li>
+	{% else %}
+	    <li><a href="/accounts/login">Login/Join!</a></li>
+	{% endif %}
+	
 	<li>
 	    <ul class="collapsible collapsible-accordion">
 		<li>
@@ -33,6 +39,7 @@
 		    <a class="collapsible-header waves-effect waves-teal">Tournament Results</a>
 		    <div class="collapsible-body">
 			<ul>
+			    <li><a href="http://www.uschess.org/msa/XtblMain.php?201912147902.0" target="_blank">December 2019 Tournament</a></li>
 			    <li><a href="http://www.uschess.org/msa/XtblMain.php?201910125062.0" target="_blank">October 2019 Tournament</a></li>
 			    <li><a href="http://www.uschess.org/msa/XtblMain.php?201906294822.0" target="_blank">June 2019 Tournament</a></li>
 			    <li><a href="http://www.uschess.org/msa/XtblMain.php?201902231652.0" target="_blank">February 2019 Tournament</a></li>
