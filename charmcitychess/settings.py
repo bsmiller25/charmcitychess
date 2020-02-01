@@ -85,16 +85,27 @@ WSGI_APPLICATION = 'charmcitychess.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT'),
-    }
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': os.environ.get('DB_NAME'),
+#        'USER': os.environ.get('DB_USER'),
+#        'PASSWORD': os.environ.get('DB_PASSWORD'),
+#        'HOST': os.environ.get('DB_HOST'),
+#        'PORT': os.environ.get('DB_PORT'),
+#    }
+#}
+
+import dj_database_url
+DATABASES={}
+DATABASES['default'] = dj_database_url.config(
+    default='postgresql://{}:{}@{}:{}/{}'.format(
+        os.environ.get('DB_USER'),
+        os.environ.get('DB_PASSWORD'),
+        os.environ.get('DB_HOST'),
+        os.environ.get('DB_PORT'),
+        os.environ.get('DB_NAME')),
+    conn_max_age=600, ssl_require=True)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -145,4 +156,5 @@ SENDGRID_SANDBOX_MODE_IN_DEBUG=True
 
 # echo to stdout or any other file-like object that is passed to the backend via the stream kwarg.
 SENDGRID_ECHO_TO_STDOUT=True
+
 
