@@ -1,0 +1,30 @@
+{% extends 'ccc/base.html' %}
+
+{% block title %}Charm City Chess -- A Baltimore Chess Club{% endblock %}
+
+{% block content %}
+    <div class="container">
+	<h3>Club Members</h3>
+
+	<table class="table">
+	    <thead>
+		<th>Name</th>
+		<th>USCF ID</th>
+		<th>Chess.com ID</th>
+		<th>Lichess.org ID</th>
+	    </thead>
+	    <tbody>
+		{% for member in members %}
+		    <tr>
+			<td>{{ member.user.get_full_name }}</td>
+			<td>{{ member.uscf_id }}</td>
+			<td>{{ member.chesscom_id }}</td>
+			<td>{{ member.lichess_id }}</td>
+		    </tr>
+		{% endfor %}
+	    </tbody>
+	</table>
+	
+    </div>
+    
+{% endblock %}

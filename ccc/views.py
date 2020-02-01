@@ -71,6 +71,25 @@ def register(request):
         form = RegistrationForm()
     return render(request, 'registration/register.html', {'form': form})
 
+@login_required
+def members(request):
+    """list all members"""
+    members = Member.objects.all()
+
+    context = {
+        'members': members
+        }
+    return render(request, 'ccc/members.html', context)
+
+
+def coaching(request):
+    """Help find coaching"""
+    coaches = Coach.objects.all()
+
+    context = {
+        'coaches': coaches,
+        }
+    return render(request, 'ccc/coaches.html', context)
 
 def bylaws(request):
     """Page for displaying the club bylaws"""

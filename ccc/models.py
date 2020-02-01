@@ -11,7 +11,25 @@ class Member(models.Model):
     lichess_id = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):
-        return('{}, {}'.format(self.user.first_name, self.user.last_name))
+        return('{}, {}'.format(self.user.last_name, self.user.first_name))
+
+
+class Coach(models.Model):
+    member = models.OneToOneField('Member', on_delete=models.CASCADE)
+    bio = models.TextField(null=True, blank=True)
+    min_rating = models.IntegerField(null=True, blank=True)
+    max_rating = models.IntegerField(null=True, blank=True)
+    hourly_rate_private = models.IntegerField(null=True, blank=True)
+    hourly_rate_group = models.IntegerField(null=True, blank=True)
+
+    class Meta:
+        verbose_name_plural = 'coaches'
+        
+    def __str__(self):
+        return('{}, {}'.format(self.member.user.last_name,
+                               self.member.user.first_name))
+    
+    
     
 @receiver(post_save, sender=User)
 def create_user_member(sender, instance, created, **kwargs):
