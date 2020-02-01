@@ -1,11 +1,15 @@
 import os
 import datetime
+from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.db.models import Sum, Avg, Q, F, Case, Count, When
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
+
+from .models import *
+from .forms import *
 import pdb
 
 
@@ -40,7 +44,32 @@ def index(request):
 @login_required
 def profile(request):
     """User's profile page"""
+    if request.method == 'POST':
+        member = Member.objects.get(user=request.user)
+        if request.POST.get('uscf_id'):
+            member.uscf_id = request.POST.get('uscf_id')
+        if request.POST.get('chesscom_id'):    
+            member.chesscom_id = request.POST.get('chesscom_id')
+        if request.POST.get('lichess_id'):
+            member.lichess_id = request.POST.get('lichess_id')
+        member.save()
+        
     return render(request, 'ccc/profile.html')
+
+def register(request):
+    """user registration"""
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect('/accounts/profile')
+    else:
+        form = RegistrationForm()
+    return render(request, 'registration/register.html', {'form': form})
 
 
 def bylaws(request):
