@@ -145,3 +145,6 @@ SENDGRID_SANDBOX_MODE_IN_DEBUG=True
 
 # echo to stdout or any other file-like object that is passed to the backend via the stream kwarg.
 SENDGRID_ECHO_TO_STDOUT=True
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
