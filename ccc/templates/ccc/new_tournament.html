@@ -10,13 +10,13 @@
     <div class="container">
 	<div class="row">
 	    <div class="col s12">
-		<h2 class="center-align">Charm City Chess Club 2019 December Action Tournament!</h2>
+		<h2 class="center-align">{{ tname }}</h2>
 		
 		<h4>Details</h4>
 		<table>
 		    <tr>
 			<td>Date and Time:</td>
-			<td>December 14th, 9:30am</td>
+			<td>{{ tdate }}, 9:30am</td>
 			<tr>
 			    <td>Location:</td>
 			    <td><a href="https://www.google.com/maps/place/Barnes+%26+Noble+Johns+Hopkins/@39.3285375,-76.6185429,17z/data=!3m1!4b1!4m5!3m4!1s0x89c805bbfdf8a855:0x652c4b853dceebd9!8m2!3d39.3285334!4d-76.6163489">Barnes and Nobel: 3300 St Paul Street, Baltimore MD 21218</a></td>
@@ -25,7 +25,7 @@
 			    <td>Open Section:</td>
 			    <td>USCF Membership Required<br>
 				4SS, G/45; d5<br>
-				Entry Fee: $25, after December 7th $35<br>
+				Entry Fee: $25, after {{ edate }} $35<br>
 				Prizes (based on 40 paid entries): 1st-$200, 2nd-$125, 3rd: $75<br>
 				Top U2000, U1800, U1600, U1400: $70 each<br>
 				Registration: 9:30am-10:15am, rds 10:30am, 12:30pm, 2:15pm, 4:00pm
@@ -35,7 +35,7 @@
 			    <td>U1200 Section:</td>
 			    <td>USCF Membership Required<br>
 				5SS, G/30; d5<br>
-				Entry Fee: $15, after December 7th $20<br>
+				Entry Fee: $15, after {{ edate }} $20<br>
 				Trophies: 1st, 2nd, 3rd<br>
 				Additional 1 year membership to USCF for players scoring 3.5 or better<br>
 				Registration: 9:30am-10:15am, rds-10:30am, 12:15pm, 1:30pm, 2:45pm, 4:00pm
@@ -80,9 +80,9 @@
 					<option value="U1200">U1200 $20.00 USD</option>
 				    {% endif %}
 				</select> </td></tr>
-				<tr><td><input type="hidden" name="on1" value="Participant Name">Participant Name</td></tr><tr><td><input type="text" name="os1" maxlength="200"></td></tr>
-				<tr><td><input type="hidden" name="on2" value="Participant USCF ID">Participant USCF ID</td></tr><tr><td><input type="text" name="os2" maxlength="200"></td></tr>
-				<tr><td><input type="hidden" name="on3" value="Contact Email">Contact Email</td></tr><tr><td><input type="text" name="os3" maxlength="200"></td></tr>
+				<tr><td><input type="hidden" name="on1" value="Participant Name">Participant Name</td></tr><tr><td><input type="text" name="os1" maxlength="200" required></td></tr>
+				<tr><td><input type="hidden" name="on2" value="Participant USCF ID">Participant USCF ID</td></tr><tr><td><input type="text" name="os2" maxlength="200" required></td></tr>
+				<tr><td><input type="hidden" name="on3" value="Contact Email">Contact Email</td></tr><tr><td><input type="text" name="os3" maxlength="200" required></td></tr>
 			    </table>
 			    <input type="hidden" name="option_select0" value="Open">
 			    {% if earlyreg %}
