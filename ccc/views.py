@@ -33,7 +33,7 @@ def send_email(to_emails, bcc_emails, subj, msg):
 
 def index(request):
     """Charm City Chess Homepage"""
-    new_tournament = False
+    new_tournament = True
     
     context = {
         'new_tournament': new_tournament,
@@ -121,13 +121,21 @@ def gallery(request, gal_str):
 
 def new_tournament(request):
     """Open registration for a new tournament"""
-    done = datetime.datetime.today() > datetime.datetime.strptime('2019-12-14', '%Y-%m-%d')
-    earlyreg = datetime.datetime.today() <= datetime.datetime.strptime('2019-12-08', '%Y-%m-%d')
+
+    tname = 'Charm City Chess Club Spring Action Tournament'
+    tdate = '2020-03-14'
+    edate = '2020-03-07'
+    
+    done = datetime.datetime.today() > datetime.datetime.strptime(tdate, '%Y-%m-%d')
+    earlyreg = datetime.datetime.today() <= datetime.datetime.strptime(edate, '%Y-%m-%d')
     
     
     context = {
+        'tname': tname,
         'done': done,
-        'earlyreg': earlyreg
+        'earlyreg': earlyreg,
+        'tdate': tdate,
+        'edate': edate,
         }
     
     return render(request, 'ccc/new_tournament.html', context)
