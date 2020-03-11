@@ -123,8 +123,8 @@ def new_tournament(request):
     """Open registration for a new tournament"""
 
     tname = 'Charm City Chess Club Spring Action Tournament'
-    tdate = '2020-03-14'
-    edate = '2020-03-07'
+    tdate = '2020-05-09'
+    edate = '2020-05-02'
     
     done = datetime.datetime.today() > datetime.datetime.strptime(tdate, '%Y-%m-%d')
     earlyreg = datetime.datetime.today() <= datetime.datetime.strptime(edate, '%Y-%m-%d')

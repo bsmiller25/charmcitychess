@@ -3,47 +3,55 @@
 {% block title %}Charm City Chess -- A Baltimore Chess Club{% endblock %}
 
 {% block head %}
-    <meta name="description" content="The Charm City Chess Club is the best Baltimore chess club around! We meet up weekly and hold USCF tournaments quarterly.">
+  <meta name="description" content="The Charm City Chess Club is the best Baltimore chess club around! We meet up weekly and hold USCF tournaments quarterly.">
 {% endblock %}
 
 {% block content %}
-    
-    {% if new_tournament %}
-	<div class="valign-wrapper center-align red lighten-1">
-	    <div class="row">
-		<h4 class="white-text">New Charm City Chess Club Tournament!</h4>
-		<a href="/new_tournament/" class="waves-effect waves-light btn pulse">More Info</a>
-	    </div>
-	</div>
-	<br>
-    {% endif %}
-    
-    <div class="container">
-
-	<div class="row">
-	    <div class="col s12">  
-
-		<div class="valign-wrapper center-align">
-		    <h2>The Charm City Chess Club</h2>
-		</div>
-		
-		<p class="flow-text">    
-		    Our Baltimore chess club meets each Monday at the Barnes & Noble on the Johns Hopkins University campus (3330 St. Paul St) from 6pm (often a little earlier) to 9pm. Membership is free! Typically, our members meet around the Starbucks coffeeshop inside the B&N store. As always, please be considerate and remember to patronize the coffeeshop that they offer.<br><br>
-		    
-		    We also hold quarterly USCF rated tournaments with cash prizes! For more information, contact our director, <a href="mailto:charmcitychess@gmail.com">Alan Horowitz</a> (917-573-5775). <br><br>
-
-		    Barnes & Nobel has been very generous to us so please do not bring outside food. Instead, patronize their wonderful cafe!			
-		</p>
-
-		<div class="video-container">
-		    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3086.2229762437037!2d-76.6185429490645!3d39.32853337940583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c805bbfdf8a855%3A0x652c4b853dceebd9!2sBarnes+%26+Noble+Johns+Hopkins!5e0!3m2!1sen!2sus!4v1563919505812!5m2!1sen!2sus" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
-		</div>
-		
-	    </div>
-	</div>
-
-	<hr>
-		
+  
+  {% if new_tournament %}
+    <div class="valign-wrapper center-align red lighten-1">
+      <div class="row">
+	<h4 class="white-text">Tournament Postponed!</h4>
+	<a href="/new_tournament/" class="waves-effect waves-light btn pulse">More Info</a>
+      </div>
     </div>
     
+    <br>
+  {% endif %}
+  
+  <div class="container">
+
+    <h4>Tournament Postponement</h4>
+    <p>Due to current circumstances, the Charm City CC 2020 Spring Action Tournament has been postponed to Saturday, May 9th... same time (10am), same venue, the Barnes & Noble Bookstore, 3330 St. Paul Street, Baltimore.
+      This change is being done by request of our venue host that gatherings be held to under 20 people. 
+      Those requesting further information are asked to contact us at charmcitychess@gmail.com or by telephone on 917-573-5775.  Thanks and see you May 9th!
+    </p>
+
+    
+    <div class="row">
+      <div class="col s12">  
+
+	<div class="valign-wrapper center-align">
+	  <h2>The Charm City Chess Club</h2>
+	</div>
+	
+	<p class="flow-text">    
+	  Our Baltimore chess club meets each Monday at the Barnes & Noble on the Johns Hopkins University campus (3330 St. Paul St) from 6pm (often a little earlier) to 9pm. Membership is free! Typically, our members meet around the Starbucks coffeeshop inside the B&N store. As always, please be considerate and remember to patronize the coffeeshop that they offer.<br><br>
+	  
+	  We also hold quarterly USCF rated tournaments with cash prizes! For more information, contact our director, <a href="mailto:charmcitychess@gmail.com">Alan Horowitz</a> (917-573-5775). <br><br>
+
+	  Barnes & Nobel has been very generous to us so please do not bring outside food. Instead, patronize their wonderful cafe!			
+	</p>
+
+	<div class="video-container">
+	  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3086.2229762437037!2d-76.6185429490645!3d39.32853337940583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c805bbfdf8a855%3A0x652c4b853dceebd9!2sBarnes+%26+Noble+Johns+Hopkins!5e0!3m2!1sen!2sus!4v1563919505812!5m2!1sen!2sus" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+	</div>
+	
+      </div>
+    </div>
+
+    <hr>
+    
+  </div>
+  
 {% endblock %}
