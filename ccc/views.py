@@ -33,7 +33,7 @@ def send_email(to_emails, bcc_emails, subj, msg):
 
 def index(request):
     """Charm City Chess Homepage"""
-    new_tournament = True
+    new_tournament = False
     
     context = {
         'new_tournament': new_tournament,

@@ -3,50 +3,98 @@
 {% block title %}Charm City Chess -- A Baltimore Chess Club{% endblock %}
 
 {% block head %}
-    <meta name="description" content="Looking to improve your chess? Work with one of coaches for the best chess instruction in the Baltimore area!">
+  <meta name="description" content="Looking to improve your chess? Work with one of coaches for the best chess instruction in the Baltimore area!">
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-	
-	<h1>Coaching And Instruction</h1>
+  <div class="container">
+    
+    <h1>Coaching And Instruction</h1>
 
-	<div class="row">
-	    <div class="col s12 m6">
+    <div class="row">
+      <div class="col s12 m6">
 
-		{% if not coaches %}
-		    <h5>No coaches yet. Check back soon!</h5>
-		{% endif %}
+
+	<div class="card blue-grey darken-1">
+	  <div class="card-content white-text">
+	    <span class="card-title">GM Marin Bosiocic</span>
+	    {% load static %}
+	    <img class="card-img-top" src="{% static 'ccc/coaches/marinbosiocic.jpg' %}" alt="Marin Bosiocic">
+	    <p>Mr. Marin Bosiocic is Chess Grand Master and two time national chess champion of Croatia.
+	      Born 1988, Mr. Bosiocic&#39;s FIDE NR rating is currently 2602 with a highest ranking of 2648.
+	      Other awards include his gold medal win on the second board in the European Team
+	      Championships in Hersonissos, Greece in 2017.
+	      Mr. Marin Bosiocic has over 10 years of experience in chess training on all levels and has
+	      constructed a system of personal programs for all elements of chess where a student would
+	      want to improve their game.
+	      The basic structure of his training are: <br>
+	      - To propose a plan of subjects and a schedule based on a student&#39;s recent games.<br>
+	      - The plan of participation in the competitions is also made for students interested in tournament play.<br>
+	      - Evaluation of student performance, if requested, are done on a bi-monthly basis.<br>
+	      Lessons use chess-based, on-line tools and are available to children or adults.<br>
+
+	      Other highlights:<br>
+	      <li><a href="https://www.youtube.com/watch?v=wlNxg6hcHro">Interview on European team chess 2017 Greece championship where I was gold medalist on second board with 2818 performance rating.</a></li>
+	      <li><a href="https://www.youtube.com/watch?v=6LNqVfHZ4A4">World blitz chess championship Moscow 2019 Marin Bosiocic-Wang Hao (elo 2763) 1-0</a></li>
+	      <li><a href="https://www.youtube.com/watch?v=o6KK7IfFvR4">Magnus Carlsen (World champion)-Marin Bosiocic 1-0 2016 Doha</a></li>		     
 		
-		{% for coach in coaches %}
-		    
-		    <div class="card blue-grey darken-1">
-			<div class="card-content white-text">
-			    <span class="card-title">{{ coach.member }}</span>
-			    <p>{{ coach.bio }}
-			    <table class="table">
-				<tr>
-				    <td>Potential Student Rating Range</td>
-				    <td>{{ coach.min_rating }} - {{ coach.max_rating }}</td>
-				</tr>
-				<tr>
-				    <td>Private Hourly Rate</td>
-				    <td>${{ coach.hourly_rate_private }}</td>
-				</tr>
-				<tr>
-				    <td>Group Hourly Rate</td>
-				    <td>${{ coach.hourly_rate_group }}</td>
-				</tr>
-			    </table>
-			</div>
-			<div class="card-action">
-			    <a href="mailto:{{ coach.member.user.email }}">Email</a>
-			</div>
-		    </div>
-		{% endfor %}
-	    </div>
+	    </p>
+	    
+	    
+	    <table class="table">
+	      <tr>
+		<td>Private Hourly Rate</td>
+		<td>$50</td>
+	      </tr>
+	      <tr>
+		<td>Group Hourly Rate (max 5 students)</td>
+		<td>$20</td>
+	      </tr>
+	    </table>
+	    <hr>
+	    <p>Book through the club!</p>
+	  </div>
+	  <div class="card-action">
+	    <a href="mailto:charmcitychess@gmail.com">Email</a>
+	    <a href="tel:+9175735775">917-573-5775</a>
+	  </div>
 	</div>
+
+
 	
+
+
+	
+	
+	{% for coach in coaches %}
+	  
+	  <div class="card blue-grey darken-1">
+	    <div class="card-content white-text">
+	      <span class="card-title">{{ coach.member }}</span>
+	      <p>{{ coach.bio }}
+		<table class="table">
+		  <tr>
+		    <td>Potential Student Rating Range</td>
+		    <td>{{ coach.min_rating }} - {{ coach.max_rating }}</td>
+		  </tr>
+		  <tr>
+		    <td>Private Hourly Rate</td>
+		    <td>${{ coach.hourly_rate_private }}</td>
+		  </tr>
+		  <tr>
+		    <td>Group Hourly Rate</td>
+		    <td>${{ coach.hourly_rate_group }}</td>
+		  </tr>
+		</table>
+	    </div>
+	    <div class="card-action">
+	      <a href="mailto:{{ coach.member.user.email }}">Email</a>
+	    </div>
+	  </div>
+	{% endfor %}
+      </div>
     </div>
     
+  </div>
+  
 {% endblock %}
