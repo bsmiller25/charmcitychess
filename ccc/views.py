@@ -22,7 +22,7 @@ def send_email(to_emails, bcc_emails, subj, msg):
 
     message.reply_to = 'bsmiller25@gmail.com'
     message.bcc = bcc_emails
-    
+
     try:
         sg = SendGridAPIClient(os.environ.get('SENDGRID_API'))
         response = sg.send(message)
@@ -30,16 +30,16 @@ def send_email(to_emails, bcc_emails, subj, msg):
         print(e.message)
 
 
-
 def index(request):
     """Charm City Chess Homepage"""
-    new_tournament = False
-    
+    new_tournament = True
+
     context = {
         'new_tournament': new_tournament,
     }
-    
+
     return render(request, 'ccc/index.html', context)
+
 
 @login_required
 def profile(request):
@@ -48,13 +48,14 @@ def profile(request):
         member = Member.objects.get(user=request.user)
         if request.POST.get('uscf_id'):
             member.uscf_id = request.POST.get('uscf_id')
-        if request.POST.get('chesscom_id'):    
+        if request.POST.get('chesscom_id'):
             member.chesscom_id = request.POST.get('chesscom_id')
         if request.POST.get('lichess_id'):
             member.lichess_id = request.POST.get('lichess_id')
         member.save()
-        
+
     return render(request, 'ccc/profile.html')
+
 
 def register(request):
     """user registration"""
@@ -71,6 +72,7 @@ def register(request):
         form = RegistrationForm()
     return render(request, 'registration/register.html', {'form': form})
 
+
 @login_required
 def members(request):
     """list all members"""
@@ -78,7 +80,7 @@ def members(request):
 
     context = {
         'members': members
-        }
+    }
     return render(request, 'ccc/members.html', context)
 
 
@@ -88,8 +90,9 @@ def coaching(request):
 
     context = {
         'coaches': coaches,
-        }
+    }
     return render(request, 'ccc/coaches.html', context)
+
 
 def bylaws(request):
     """Page for displaying the club bylaws"""
@@ -102,40 +105,41 @@ def gallery(request, gal_str):
         '2019_02_23_Tourney': 'February 2019 Open',
         '2019_06_29_Tourney': 'June 2019 Open',
         '2019_10_12_Tourney': 'October 2019 Open',
-        }
+    }
 
     tourney = nice_str[gal_str]
-    
-    photos = ['/static/ccc/gallery/{}/{}'.format(gal_str, i) for i in os.listdir('ccc/static/ccc/gallery/{}/'.format(gal_str))]
+
+    photos = ['/static/ccc/gallery/{}/{}'.format(gal_str, i) for i in os.listdir(
+        'ccc/static/ccc/gallery/{}/'.format(gal_str))]
 
     context = {
         'tourney': tourney,
         'photos': photos
-        }
-    
+    }
+
     return render(
         request,
         'ccc/gallery.html',
         context
     )
 
+
 def new_tournament(request):
     """Open registration for a new tournament"""
 
-    tname = 'Charm City Chess Club Spring Action Tournament'
-    tdate = '2020-05-09'
-    edate = '2020-05-02'
-    
+    tname = 'Charm City Chess Club December Action Tournament'
+    tdate = '2021-12-04'
+    edate = '2021-11-27'
+
     done = datetime.datetime.today() > datetime.datetime.strptime(tdate, '%Y-%m-%d')
     earlyreg = datetime.datetime.today() <= datetime.datetime.strptime(edate, '%Y-%m-%d')
-    
-    
+
     context = {
         'tname': tname,
         'done': done,
         'earlyreg': earlyreg,
         'tdate': tdate,
         'edate': edate,
-        }
-    
+    }
+
     return render(request, 'ccc/new_tournament.html', context)
