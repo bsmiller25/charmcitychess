@@ -15,41 +15,41 @@
 	<h4>Details</h4>
 	<table>
 	  <tr>
-	    <td>Date and Time:</td>
-	    <td>{{ tdate }}, 9:30am</td>
+	    <td><p style="font-weight: bold; text-decoration: underline;">Date and Time:</p></td>
+	    <td>{{ tdate|date:"M d, Y"}}, 10:30am</td>
 	    <tr>
-	      <td>Location:</td>
+	      <td><p style="font-weight: bold; text-decoration: underline;">Location:</p></td>
 	      <td><a href="https://www.google.com/maps/place/Barnes+%26+Noble+Johns+Hopkins/@39.3285375,-76.6185429,17z/data=!3m1!4b1!4m5!3m4!1s0x89c805bbfdf8a855:0x652c4b853dceebd9!8m2!3d39.3285334!4d-76.6163489">Barnes and Nobel: 3300 St Paul Street, Baltimore MD 21218</a></td>
 	    </tr>
 	    <tr>
-	      <td>Open Section:</td>
+	      <td><p style="font-weight: bold; text-decoration: underline;">Open Section:</p></td>
 	      <td>USCF Membership Required<br>
-		4SS, G/45; d5<br>
-		Entry Fee: $25, after {{ edate }} $35<br>
+		4SS, G/30; d5<br>
+		Entry Fee: $30, after {{ edate|date:"M d, Y" }} $40<br>
 		Prizes (based on 40 paid entries): 1st-$200, 2nd-$125, 3rd: $75<br>
 		Top U2000, U1800, U1600, U1400: $70 each<br>
-		Registration: 9:30am-10:15am, rds 10:30am, 12:30pm, 2:15pm, 4:00pm
+		Registration: 10:30am-11:15am, rds 11:30am, 1:30pm, 2:45pm, 4:00pm
 	      </td>
 	    </tr>
 	    <tr>
-	      <td>U1200 Section:</td>
+	      <td><p style="font-weight: bold; text-decoration: underline;">U1200 Section:</p></td>
 	      <td>USCF Membership Required<br>
-		5SS, G/30; d5<br>
-		Entry Fee: $15, after {{ edate }} $20<br>
+		4SS, G/30; d5<br>
+		Entry Fee: $25, after {{ edate|date:"M d, Y" }} $30<br>
 		Trophies: 1st, 2nd, 3rd<br>
-		Additional 1 year membership to USCF for players scoring 3.5 or better<br>
-		Registration: 9:30am-10:15am, rds-10:30am, 12:15pm, 1:30pm, 2:45pm, 4:00pm
+		Additional 1 year membership to USCF for players scoring 3 points or better<br>
+		Registration: 10:30am-11:15am, rds 11:30am, 1:30pm, 2:45pm, 4:00pm
 	      </td>
 	    </tr>
 	    <tr>
-	      <td>Contact Info:</td>
+	      <td><p style="font-weight: bold; text-decoration: underline;">Contact Info:</p></td>
 	      <td>charmcitychess@gmail.com, 443-680-7849, 917-573-5775</td>
 	    </tr>
 	</table>
 	<div class="card red lighten-1">
 	  <div class="row">
 	    <div class="card-content white-text">
-	      <p>Please bring clocks and sets!</p>
+	      <p>Please bring set and clocks.</p>
 	    </div>
 	  </div>
 	</div>
@@ -71,31 +71,31 @@
 	      <input type="hidden" name="currency_code" value="USD">
 	      <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted">
 	      <table>
-		<tr><td><input type="hidden" name="on0" value="Section">Section</td></tr><tr><td><select name="os0">
+		<tr><td><input type="hidden" name="on0" value="Section"><p style="font-weight: bold; text-decoration: underline;">Section*</p></td></tr><tr><td><select name="os0">
 		  {% if earlyreg %}
-		    <option value="Open">Open $25.00 USD</option>
-		    <option value="U1200">U1200 $15.00 USD</option>
+		    <option value="Open">Open $30.00 USD</option>
+		    <option value="U1200">U1200 $25.00 USD</option>
 		  {% else %}
-		    <option value="Open">Open $35.00 USD</option>
-		    <option value="U1200">U1200 $20.00 USD</option>
+		    <option value="Open">Open $40.00 USD</option>
+		    <option value="U1200">U1200 $30.00 USD</option>
 		  {% endif %}
 		</select> </td></tr>
-		<tr><td><input type="hidden" name="on1" value="Participant Name">Participant Name</td></tr><tr><td><input type="text" name="os1" maxlength="200" required></td></tr>
-		<tr><td><input type="hidden" name="on2" value="Participant USCF ID">Participant USCF ID</td></tr><tr><td><input type="text" name="os2" maxlength="200" required></td></tr>
-		<tr><td><input type="hidden" name="on3" value="Contact Email">Contact Email</td></tr><tr><td><input type="text" name="os3" maxlength="200" required></td></tr>
+		<tr><td><input type="hidden" name="on1" value="Participant Name"><p style="font-weight: bold; text-decoration: underline;">Participant Name*</p></td></tr><tr><td><input type="text" name="os1" maxlength="200" required></td></tr>
+		<tr><td><input type="hidden" name="on2" value="Participant USCF ID"><p style="font-weight: bold; text-decoration: underline;">Participant USCF ID*</p></td></tr><tr><td><input type="text" name="os2" maxlength="200" required></td></tr>
+		<tr><td><input type="hidden" name="on3" value="Contact Email"><p style="font-weight: bold; text-decoration: underline;">Contact Email*</p></td></tr><tr><td><input type="text" name="os3" maxlength="200" required></td></tr>
 	      </table>
 	      <input type="hidden" name="option_select0" value="Open">
 	      {% if earlyreg %}
-		<input type="hidden" name="option_amount0" value="25.00">
+		<input type="hidden" name="option_amount0" value="30.00">
 	      {% else %}
-		<input type="hidden" name="option_amount0" value="35.00">
+		<input type="hidden" name="option_amount0" value="40.00">
 	      {% endif %}
 	      
 	      <input type="hidden" name="option_select1" value="U1200">
 	      {% if earlyreg %}
-		<input type="hidden" name="option_amount1" value="15.00">
+		<input type="hidden" name="option_amount1" value="25.00">
 	      {% else %}
-		<input type="hidden" name="option_amount1" value="20.00">
+		<input type="hidden" name="option_amount1" value="30.00">
 	      {% endif %}
 	      <input type="hidden" name="option_index" value="0">
 	      <input type="image" src="https://cdn.pixabay.com/photo/2016/08/29/09/22/register-1627729_960_720.png" style="height: 100px" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
@@ -103,6 +103,7 @@
 	    </form>
 
 	  </div>
+	  <p>* Required Field</p>
 	{% else %}
 
 	  <div class="card red lighten-1">
