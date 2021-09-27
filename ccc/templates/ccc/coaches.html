@@ -12,14 +12,16 @@
     <h1>Coaching And Instruction</h1>
 
     <div class="row">
-      <div class="col s12 m6">
+      <div class="col s12 m6"">
 
 
 	<div class="card blue-grey darken-1">
 	  <div class="card-content white-text">
 	    <span class="card-title">GM Marin Bosiocic</span>
 	    {% load static %}
-	    <img class="card-img-top" src="{% static 'ccc/coaches/marinbosiocic.jpg' %}" alt="Marin Bosiocic">
+	    <div class="card-image ">
+	      <img class="card-img-top" style="height:auto; width:70%; margin:auto;" src="{% static 'ccc/coaches/marinbosiocic.jpg' %}" alt="Marin Bosiocic">
+	    </div>
 	    <p>Mr. Marin Bosiocic is a Chess Grand Master and two time national chess champion of Croatia.
 	      Born 1988, Mr. Bosiocic&#39;s FIDE NR rating is currently 2602 with a highest ranking of 2648.
 	      Other awards include his gold medal win on the second board in the European Team
@@ -36,7 +38,7 @@
 	      <li><a href="https://www.youtube.com/watch?v=wlNxg6hcHro">Interview on European team chess 2017 Greece championship where he was the gold medalist on second board with 2818 performance rating.</a></li>
 	      <li><a href="https://www.youtube.com/watch?v=6LNqVfHZ4A4">World blitz chess championship Moscow 2019 Marin Bosiocic-Wang Hao (elo 2763) 1-0</a></li>
 	      <li><a href="https://www.youtube.com/watch?v=o6KK7IfFvR4">Magnus Carlsen (World champion)-Marin Bosiocic 1-0 2016 Doha</a></li>		     
-		
+	      
 	    </p>
 	    
 	    
@@ -58,42 +60,37 @@
 	    <a href="tel:+9175735775">917-573-5775</a>
 	  </div>
 	</div>
+      </div>
+
+      <div class="col s12 m6">
 
 
-	
-
-
-	
-	
-	{% for coach in coaches %}
-	  
-	  <div class="card blue-grey darken-1">
-	    <div class="card-content white-text">
-	      <span class="card-title">{{ coach.member }}</span>
-	      <p>{{ coach.bio }}
-		<table class="table">
-		  <tr>
-		    <td>Potential Student Rating Range</td>
-		    <td>{{ coach.min_rating }} - {{ coach.max_rating }}</td>
-		  </tr>
-		  <tr>
-		    <td>Private Hourly Rate</td>
-		    <td>${{ coach.hourly_rate_private }}</td>
-		  </tr>
-		  <tr>
-		    <td>Group Hourly Rate</td>
-		    <td>${{ coach.hourly_rate_group }}</td>
-		  </tr>
-		</table>
+	<div class="card blue-grey darken-1">
+	  <div class="card-content white-text">
+	    <span class="card-title">Theo Epstein</span>
+	    {% load static %}
+	    <div class="card-image">
+	      <img class="card-img-top" style="height:auto; width:70%; margin:auto;" src="{% static 'ccc/coaches/theoepstein.jpg' %}" alt="Theo Epstein">
 	    </div>
-	    <div class="card-action">
-	      <a href="mailto:{{ coach.member.user.email }}">Email</a>
-	    </div>
+	    <p>	     
+	      Theodore “Theo” Epstein, graduate of Yale University with a Bachelor’s Degree in Mathematics is an experienced and highly qualified chess instructor for students of all ages and levels of play.  <br><br>
+	      
+	      Mr. Epstein, a US Chess Federation rated player, residing in Baltimore, Maryland, gives instruction in private and classroom settings.  His personalized and tested approach has proved successful for students interested in both casual and tournament play.<br><br>
+
+	      Mr. Epstein’s most recent professional tournament success is his victory in the 2021 Chicago Chess Open.  <br><br>
+
+	    </p>
+	    Chess courses consist of three-lesson packages beginning at $55 per session.  For other rates and availability, please contact the Charm City Chess Club at CharmCityChess@gmail.com or by telephone on 917-573-5775.
+	    <hr>
+	    <p>Booking and information!</p>
 	  </div>
-	{% endfor %}
+	  <div class="card-action">
+	    <a href="mailto:charmcitychess@gmail.com">Email: charmcitychess@gmail.com</a>
+	    <a href="tel:+9175735775">917-573-5775</a>
+	  </div>
+	</div>
       </div>
     </div>
-    
   </div>
   
 {% endblock %}
