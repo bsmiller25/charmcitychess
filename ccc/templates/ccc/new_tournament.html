@@ -16,7 +16,7 @@
 	<table>
 	  <tr>
 	    <td><p style="font-weight: bold; text-decoration: underline;">Date and Time:</p></td>
-	    <td>{{ tdate|date:"M d, Y"}}, 10:30am</td>
+	    <td>{{ tdate|date:"l M d, Y"}}, 10:30am</td>
 	    <tr>
 	      <td><p style="font-weight: bold; text-decoration: underline;">Location:</p></td>
 	      <td><a href="https://www.google.com/maps/place/Barnes+%26+Noble+Johns+Hopkins/@39.3285375,-76.6185429,17z/data=!3m1!4b1!4m5!3m4!1s0x89c805bbfdf8a855:0x652c4b853dceebd9!8m2!3d39.3285334!4d-76.6163489">Barnes and Nobel: 3300 St Paul Street, Baltimore MD 21218</a></td>
@@ -43,13 +43,13 @@
 	    </tr>
 	    <tr>
 	      <td><p style="font-weight: bold; text-decoration: underline;">Contact Info:</p></td>
-	      <td>charmcitychess@gmail.com, 443-680-7849, 917-573-5775</td>
+	      <td>charmcitychess@gmail.com, 917-573-5775</td>
 	    </tr>
 	</table>
 	<div class="card red lighten-1">
 	  <div class="row">
 	    <div class="card-content white-text">
-	      <p>Please bring set and clocks.</p>
+	      <p>Please bring sets and clocks.</p>
 	    </div>
 	  </div>
 	</div>
@@ -66,7 +66,7 @@
 	      <input type="hidden" name="cmd" value="_xclick">
 	      <input type="hidden" name="business" value="charmcitychess@gmail.com">
 	      <input type="hidden" name="lc" value="US">
-	      <input type="hidden" name="item_name" value="Charm City Chess Club 2019 December Action Tournament Registration">
+	      <input type="hidden" name="item_name" value="{{ tname }}">
 	      <input type="hidden" name="button_subtype" value="services">
 	      <input type="hidden" name="currency_code" value="USD">
 	      <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted">
