@@ -129,7 +129,7 @@ def new_tournament(request):
 
     tname = 'Charm City Chess Club December Action Tournament'
     tdate = datetime.datetime.strptime('2021-12-11', '%Y-%m-%d')
-    edate = datetime.datetime.strptime('2021-11-27', '%Y-%m-%d')
+    edate = datetime.datetime.strptime('2021-12-04', '%Y-%m-%d')
 
     done = datetime.datetime.today() > tdate
     earlyreg = datetime.datetime.today() <= edate
