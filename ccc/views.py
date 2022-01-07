@@ -12,6 +12,13 @@ from .models import *
 from .forms import *
 import pdb
 
+new_tournament = True
+tname = 'Charm City Chess Club 2022 Spring Action Tournament'
+tdate = datetime.datetime.strptime('2022-03-05', '%Y-%m-%d')
+
+# ereg = datetime.datetime.today() <= edate
+edate = datetime.datetime.strptime('2022-02-26', '%Y-%m-%d')
+
 
 def send_email(to_emails, bcc_emails, subj, msg):
     message = Mail(
@@ -30,12 +37,14 @@ def send_email(to_emails, bcc_emails, subj, msg):
         print(e.message)
 
 
-def index(request):
+def index(request, new_tournament=new_tournament, tdate=tdate):
     """Charm City Chess Homepage"""
-    new_tournament = True
+    new_tournament = new_tournament
+    tdate = tdate
 
     context = {
         'new_tournament': new_tournament,
+        'tdate': tdate,
     }
 
     return render(request, 'ccc/index.html', context)
@@ -124,12 +133,12 @@ def gallery(request, gal_str):
     )
 
 
-def new_tournament(request):
+def new_tournament(request, tname=tname, tdate=tdate, edate=edate):
     """Open registration for a new tournament"""
 
-    tname = 'Charm City Chess Club December Action Tournament'
-    tdate = datetime.datetime.strptime('2021-12-11', '%Y-%m-%d')
-    edate = datetime.datetime.strptime('2021-12-04', '%Y-%m-%d')
+    tname = tname
+    tdate = tdate
+    edate = edate
 
     done = datetime.datetime.today() > tdate
     earlyreg = datetime.datetime.today() <= edate
