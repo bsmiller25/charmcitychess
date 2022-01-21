@@ -11,7 +11,7 @@ django-sendgrid-v5==0.8.1
 future==0.18.2
 gunicorn==19.9.0
 idna==2.8
-ipython==7.2.0
+ipython==7.16.3
 ipython-genutils==0.2.0
 jedi==0.13.1
 oauthlib==3.0.1
