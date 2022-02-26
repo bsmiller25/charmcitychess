@@ -14,10 +14,10 @@ import pdb
 
 new_tournament = True
 tname = 'Charm City Chess Club 2022 Spring Action Tournament'
-tdate = datetime.datetime.strptime('2022-03-05', '%Y-%m-%d')
+tdate = datetime.datetime.strptime('2022-03-05', '%Y-%m-%d').date()
 
 # ereg = datetime.datetime.today() <= edate
-edate = datetime.datetime.strptime('2022-02-26', '%Y-%m-%d')
+edate = datetime.datetime.strptime('2022-02-26', '%Y-%m-%d').date()
 
 
 def send_email(to_emails, bcc_emails, subj, msg):
@@ -140,8 +140,8 @@ def new_tournament(request, tname=tname, tdate=tdate, edate=edate):
     tdate = tdate
     edate = edate
 
-    done = datetime.datetime.today() > tdate
-    earlyreg = datetime.datetime.today() <= edate
+    done = datetime.datetime.today().date() > tdate
+    earlyreg = datetime.datetime.today().date() <= edate
 
     context = {
         'tname': tname,
