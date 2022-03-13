@@ -12,7 +12,7 @@ from .models import *
 from .forms import *
 import pdb
 
-new_tournament = True
+new_tournament = False
 tname = 'Charm City Chess Club 2022 Spring Action Tournament'
 tdate = datetime.datetime.strptime('2022-03-05', '%Y-%m-%d').date()
 
