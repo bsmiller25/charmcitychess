@@ -12,12 +12,15 @@ from .models import *
 from .forms import *
 import pdb
 
-new_tournament = False
+new_tournament = True
 tname = 'Charm City Chess Club 2022 Spring Action Tournament'
-tdate = datetime.datetime.strptime('2022-03-05', '%Y-%m-%d').date()
+tdate = datetime.datetime.strptime('2022-06-05', '%Y-%m-%d').date()
 
 # ereg = datetime.datetime.today() <= edate
-edate = datetime.datetime.strptime('2022-02-26', '%Y-%m-%d').date()
+edate = datetime.datetime.strptime('2022-05-29', '%Y-%m-%d').date()
+
+if tdate < datetime.date.today():
+    new_tournament = False
 
 
 def send_email(to_emails, bcc_emails, subj, msg):
