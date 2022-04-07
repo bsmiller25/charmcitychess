@@ -19,26 +19,37 @@
 	    <td>{{ tdate|date:"l F d, Y"}}, 10:00am</td>
 	    <tr>
 	      <td><p style="font-weight: bold; text-decoration: underline;">Location:</p></td>
-	      <td><a href="https://www.google.com/maps/place/4+W+University+Pkwy,+Baltimore,+MD+21218/@39.3343179,-76.6217081,17z/data=!3m1!4b1!4m5!3m4!1s0x89c805218b21c5e1:0x516ccd688e44c366!8m2!3d39.3343138!4d-76.6195194">Inn at The Colonnade Baltimore - a DoubleTree by Hilton Hotel - 4 West University Parkway, Baltimore, MD 21218</a></td>
+	      <!--<td><a href="https://www.google.com/maps/place/4+W+University+Pkwy,+Baltimore,+MD+21218/@39.3343179,-76.6217081,17z/data=!3m1!4b1!4m5!3m4!1s0x89c805218b21c5e1:0x516ccd688e44c366!8m2!3d39.3343138!4d-76.6195194">Inn at The Colonnade Baltimore - a DoubleTree by Hilton Hotel - 4 West University Parkway, Baltimore, MD 21218</a></td> -->
+	      <td><a href="https://www.google.com/maps/place/4+W+University+Pkwy,+Baltimore,+MD+21218/@39.3343179,-76.6217081,17z/data=!3m1!4b1!4m5!3m4!1s0x89c805218b21c5e1:0x516ccd688e44c366!8m2!3d39.3343138!4d-76.6195194">The DoubleTree Hilton Hotel -- Canterbury Room -- 4 West University Parkway, Baltimore, MD 21218</a></td>
 	    </tr>
 	    <tr>
-	      <td><p style="font-weight: bold; text-decoration: underline;">Open Section:</p></td>
-	      <td>USCF Membership Required<br>
-		5SS, G/30; d5<br>
-		Entry Fee: $30, after {{ edate|date:"M d, Y" }} $40<br>
-		Prizes (based on 40 paid entries): 1st-$200, 2nd-$125, 3rd: $75<br>
-		Top U2000, U1800, U1600, U1400: $70 each<br>
-		Registration: 10:00am-11:00am, rds 11:30am, 1:30pm, 2:45pm, 4:00pm, 5:30pm
+	      <td><p style="font-weight: bold; text-decoration: underline;">All Sections:</p></td>
+	      <td>5SS, G/30; d5<br>
+		USCF June Rating Supplement used.<br>
+		Byes: Two ½ point byes available, only one ½ bye for either round 4 or 5.<br>
+		Notifications for byes required 1 hour prior to start of desired round.<br>
+		USCF Membership Required<br>
+		Registration: 9:00am-9:45am, rds 10:30am, 12:30pm, 1:45pm, 3:00pm, 4:30pm<br>
+	      </td>
+	    </tr>
+	    <td><p style="font-weight: bold; text-decoration: underline;">Open Section:</p></td>
+	      <td> Entry Fee: $30, after {{ edate|date:"M d, Y" }} $40<br>
+		Prizes (based on 40 paid entries): 1st-$200, 2nd-$125, 3rd-$75<br>
+		Top U2000: $70, U1800: $70, U1600: $70, Unrated: $50<br>
+		Section open to unrated and players over USCF 1300
 	      </td>
 	    </tr>
 	    <tr>
-	      <td><p style="font-weight: bold; text-decoration: underline;">U1200 Section:</p></td>
-	      <td>USCF Membership Required<br>
-		5SS, G/30; d5<br>
-		Entry Fee: $30, after {{ edate|date:"M d, Y" }} $40<br>
-		Trophies: 1st, 2nd, 3rd<br>
-		Additional 1 year membership to USCF for players scoring 4 points or better<br>
-		Registration: 10:00am-11:00am, rds 11:30am, 1:30pm, 2:45pm, 4:00pm, 5:30pm
+	      <td><p style="font-weight: bold; text-decoration: underline;">U1400 Section:</p></td>
+	      <td> Entry Fee: $30, after {{ edate|date:"M d, Y" }} $40<br>
+		Prizes (based on 40 paid entries): 1st-$160, 2nd-$100, 3rd-$60<br>
+		Top U1200: $50, Unrated: $40
+	      </td>
+	    </tr>
+	    <tr>
+	      <td><p style="font-weight: bold; text-decoration: underline;">U1000 Section:</p></td>
+	      <td>Entry Fee: $25, after {{ edate|date:"M d, Y" }} $30<br>
+		Prizes: 1st-$50, Trohpies: 1st, 2nd, 3rd, Top U800, Unrated<br>
 	      </td>
 	    </tr>
 	    <tr>
@@ -74,15 +85,18 @@
 		<tr><td><input type="hidden" name="on0" value="Section"><p style="font-weight: bold; text-decoration: underline;">Section*</p></td></tr><tr><td><select name="os0">
 		  {% if earlyreg %}
 		    <option value="Open">Open $30.00 USD</option>
-		    <option value="U1200">U1200 $25.00 USD</option>
+		    <option value="U1400">U1400 $30.00 USD</option>
+		    <option value="U1000">U1000 $25.00 USD</option>
 		  {% else %}
 		    <option value="Open">Open $40.00 USD</option>
-		    <option value="U1200">U1200 $30.00 USD</option>
+		    <option value="U1200">U1200 $40.00 USD</option>
+		    <option value="U1000">U1000 $30.00 USD</option>
 		  {% endif %}
 		</select> </td></tr>
 		<tr><td><input type="hidden" name="on1" value="Participant Name"><p style="font-weight: bold; text-decoration: underline;">Participant Name*</p></td></tr><tr><td><input type="text" name="os1" maxlength="200" required></td></tr>
-		<tr><td><input type="hidden" name="on2" value="Participant USCF ID"><p style="font-weight: bold; text-decoration: underline;">Participant USCF ID*</p></td></tr><tr><td><input type="text" name="os2" maxlength="200" required></td></tr>
-		<tr><td><input type="hidden" name="on3" value="Contact Email"><p style="font-weight: bold; text-decoration: underline;">Contact Email*</p></td></tr><tr><td><input type="text" name="os3" maxlength="200" required></td></tr>
+		<tr><td><input type="hidden" name="on2" value="USCF ID Number"><p style="font-weight: bold; text-decoration: underline;">USCF ID Number*</p></td></tr><tr><td><input type="text" name="os2" maxlength="200" required></td></tr>
+		<tr><td><input type="hidden" name="on3" value="USCF Expiration Date"><p style="font-weight: bold; text-decoration: underline;">USCF Expiration Date*</p></td></tr><tr><td><input type="date" name="os3" maxlength="200" required></td></tr>
+		<tr><td><input type="hidden" name="on4" value="Contact Email"><p style="font-weight: bold; text-decoration: underline;">Contact Email*</p></td></tr><tr><td><input type="text" name="os4" maxlength="200" required></td></tr>
 	      </table>
 	      <input type="hidden" name="option_select0" value="Open">
 	      {% if earlyreg %}
@@ -91,11 +105,18 @@
 		<input type="hidden" name="option_amount0" value="40.00">
 	      {% endif %}
 	      
-	      <input type="hidden" name="option_select1" value="U1200">
+	      <input type="hidden" name="option_select1" value="U1400">
 	      {% if earlyreg %}
-		<input type="hidden" name="option_amount1" value="25.00">
-	      {% else %}
 		<input type="hidden" name="option_amount1" value="30.00">
+	      {% else %}
+		<input type="hidden" name="option_amount1" value="40.00">
+	      {% endif %}
+
+	      <input type="hidden" name="option_select2" value="U1000">
+	      {% if earlyreg %}
+		<input type="hidden" name="option_amount2" value="25.00">
+	      {% else %}
+		<input type="hidden" name="option_amount2" value="30.00">
 	      {% endif %}
 	      <input type="hidden" name="option_index" value="0">
 	      <input type="image" src="https://cdn.pixabay.com/photo/2016/08/29/09/22/register-1627729_960_720.png" style="height: 100px" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
