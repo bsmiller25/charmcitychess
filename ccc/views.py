@@ -13,11 +13,11 @@ from .forms import *
 import pdb
 
 new_tournament = True
-tname = 'Charm City Chess Club 2022 Summer Open Tournament'
-tdate = datetime.datetime.strptime('2022-06-05', '%Y-%m-%d').date()
+tname = 'Charm City Chess Club 2022 Day Action Tournament'
+tdate = datetime.datetime.strptime('2022-09-18', '%Y-%m-%d').date()
 
 # ereg = datetime.datetime.today() <= edate
-edate = datetime.datetime.strptime('2022-05-29', '%Y-%m-%d').date()
+edate = datetime.datetime.strptime('2022-09-11', '%Y-%m-%d').date()
 
 if tdate < datetime.date.today():
     new_tournament = False
