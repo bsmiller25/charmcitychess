@@ -143,7 +143,7 @@ def new_tournament(request, tname=tname, tdate=tdate, edate=edate):
     tdate = tdate
     edate = edate
 
-    done = datetime.datetime.today().date() > tdate
+    done = datetime.datetime.today().date() + datetime.timedelta(days=1) > tdate
     earlyreg = datetime.datetime.today().date() <= edate
 
     context = {
