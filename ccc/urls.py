@@ -14,5 +14,6 @@ urlpatterns = [
     path('gallery/<gal_str>', views.gallery, name='gallery'),
     path('bylaws/', views.bylaws, name='bylaws'),
     path('new_tournament/', views.new_tournament, name='new_tournament'),
+    path('special_event/', views.special_event, name='special_event'),
 ]
  

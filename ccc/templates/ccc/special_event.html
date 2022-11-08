@@ -1,0 +1,103 @@
+{% extends 'ccc/base.html' %}
+
+{% block title %}Charm City Chess{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+	<h2 class="center-align">{{ sename }}</h2>
+	
+	<h4>Details</h4>
+	<table>
+	  <tr>
+	    <td><p style="font-weight: bold; text-decoration: underline;">Date and Time:</p></td>
+	    <td>{{ sedate|date:"l F d, Y"}}, 11:00am</td>
+	    <tr>
+	      <td><p style="font-weight: bold; text-decoration: underline;">Location:</p></td>
+	      <td>THB Bagel Cafe, 3208 St. Paul St, Baltimore, MD 21218</td>
+	    </tr>
+	    <tr>
+	      <td><p style="font-weight: bold; text-decoration: underline;">Description:</p></td>
+	      <td>
+		<p>Mr. William Morrison – known as “The Exterminator” for his cunning and thorough play - is an International Chess Master and seasoned chess coach with over 20 years of experience. On Sunday, December 18th, Mr. Morrison will conduct a Simultaneous Exhibition, taking on multiple players at one time, at THB Bagel Café, 3208 St. Paul Street, Baltimore. While pursuing a master’s degree at The University of Maryland Baltimore County, Mr. Morrison represented the school in international competitions including the Pan-Am Inter-collegiate Chess Championship. Mr. has also played world champions Anatoly Karpov and Gary Kasporov.</p><br>
+		<p>This event will begin promptly at 11am. For more information, contact charmcitychess@gmail.com</p>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td><p style="font-weight: bold; text-decoration: underline;">Contact Info:</p></td>
+	      <td>charmcitychess@gmail.com, 917-573-5775</td>
+	    </tr>
+	</table>
+	<div class="card red lighten-1">
+	  <div class="row">
+	    <div class="card-content white-text">
+	      <p>Please bring sets and clocks.</p>
+	    </div>
+	  </div>
+	</div>
+	<br>
+	
+
+	<h4>Registration</h4>
+
+	{% if not sedone %}
+
+	  <div class="paypal">
+	    
+	    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+	      <input type="hidden" name="cmd" value="_xclick">
+	      <input type="hidden" name="business" value="charmcitychess@gmail.com">
+	      <input type="hidden" name="lc" value="US">
+	      <input type="hidden" name="item_name" value="{{ sename }}">
+	      <input type="hidden" name="button_subtype" value="services">
+	      <input type="hidden" name="currency_code" value="USD">
+	      <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted">
+	      <table>
+		<tr><td><input type="hidden" name="on0" value="Section"><p style="font-weight: bold; text-decoration: underline;">Registration*</p></td></tr><tr><td>
+		
+		  <p>
+		    <label>
+		      <input name="os0" type="radio" value="Registered" checked/>
+		      <span>Registration $20.00 USD</span>
+		    </label>
+		  </p>
+
+		  
+		</td></tr>
+		<tr><td><input type="hidden" name="on1" value="Participant Name"><p style="font-weight: bold; text-decoration: underline;">Participant Name*</p></td></tr><tr><td><input type="text" name="os1" maxlength="200" required></td></tr>
+		<tr><td><input type="hidden" name="on2" value="Contact Email"><p style="font-weight: bold; text-decoration: underline;">Contact Email*</p></td></tr><tr><td><input type="text" name="os2" maxlength="200" required></td></tr>
+	      </table>
+	      <input type="hidden" name="option_select0" value="Registered">
+	      <input type="hidden" name="option_amount0" value="20.00">
+	      <input type="hidden" name="option_index" value="0">
+	      <input type="image" src="https://cdn.pixabay.com/photo/2016/08/29/09/22/register-1627729_960_720.png" style="height: 100px" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+	      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+	    </form>
+
+	  </div>
+	  <p>* Required Field</p>
+	{% else %}
+
+	  <div class="card red lighten-1">
+	    <div class="row">
+	      <div class="card-content white-text">
+		<p>Registration has closed!</p>
+	      </div> 
+	    </div> 
+	  </div>
+	  
+	  
+	{% endif %}
+
+	<hr>
+
+
+      </div>
+    </div>
+    
+{% endblock %}
