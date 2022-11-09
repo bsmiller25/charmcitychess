@@ -13,15 +13,23 @@ from .forms import *
 import pdb
 
 new_tournament = True
+special_event = True
+
+# tournament
 tname = 'Charm City Chess Club 2022 December Open Tournament'
 tdate = datetime.datetime.strptime('2022-12-04', '%Y-%m-%d').date()
-
-# ereg = datetime.datetime.today() <= edate
 edate = datetime.datetime.strptime('2022-11-27', '%Y-%m-%d').date()
+
 
 if tdate < datetime.date.today():
     new_tournament = False
 
+#special event
+sename = '"The Exterminator" Simultaneous Exhibition'
+sedate = datetime.datetime.strptime('2022-12-18', '%Y-%m-%d').date()
+
+if sedate < datetime.date.today():
+    special_event = False
 
 def send_email(to_emails, bcc_emails, subj, msg):
     message = Mail(
@@ -40,13 +48,15 @@ def send_email(to_emails, bcc_emails, subj, msg):
         print(e.message)
 
 
-def index(request, new_tournament=new_tournament, tdate=tdate):
+def index(request, new_tournament=new_tournament, special_event=special_event, tdate=tdate):
     """Charm City Chess Homepage"""
     new_tournament = new_tournament
+    special_event = special_event
     tdate = tdate
 
     context = {
         'new_tournament': new_tournament,
+        'special_event': special_event,
         'tdate': tdate,
     }
 
@@ -155,3 +165,15 @@ def new_tournament(request, tname=tname, tdate=tdate, edate=edate):
     }
 
     return render(request, 'ccc/new_tournament.html', context)
+
+def special_event(request, sename=sename, sedate=sedate):
+    
+    sedone = datetime.datetime.today().date() + datetime.timedelta(days=1) > sedate
+    
+    context = {
+        'sename': sename,
+        'sedate': sedate,
+        'sedone': sedone,
+        }
+
+    return render(request, 'ccc/special_event.html', context)
