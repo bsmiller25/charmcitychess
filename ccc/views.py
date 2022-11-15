@@ -48,7 +48,7 @@ def send_email(to_emails, bcc_emails, subj, msg):
         print(e.message)
 
 
-def index(request, new_tournament=new_tournament, special_event=special_event, tdate=tdate):
+def index(request, new_tournament=new_tournament, special_event=special_event, tdate=tdate, sedate=sedate):
     """Charm City Chess Homepage"""
     new_tournament = new_tournament
     special_event = special_event
