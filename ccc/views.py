@@ -53,11 +53,13 @@ def index(request, new_tournament=new_tournament, special_event=special_event, t
     new_tournament = new_tournament
     special_event = special_event
     tdate = tdate
+    sedate = sedate
 
     context = {
         'new_tournament': new_tournament,
         'special_event': special_event,
         'tdate': tdate,
+        'sedate': sedate,
     }
 
     return render(request, 'ccc/index.html', context)
