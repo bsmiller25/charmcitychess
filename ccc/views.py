@@ -13,12 +13,12 @@ from .forms import *
 import pdb
 
 new_tournament = True
-special_event = True
+special_event = False
 
 # tournament
-tname = 'Charm City Chess Club 2022 December Open Tournament'
-tdate = datetime.datetime.strptime('2022-12-04', '%Y-%m-%d').date()
-edate = datetime.datetime.strptime('2022-11-27', '%Y-%m-%d').date()
+tname = 'Charm City Chess Club 2023 Spring Action Tournament'
+tdate = datetime.datetime.strptime('2023-03-19', '%Y-%m-%d').date()
+edate = datetime.datetime.strptime('2023-03-12', '%Y-%m-%d').date()
 
 
 if tdate < datetime.date.today():

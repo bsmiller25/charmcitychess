@@ -30,27 +30,27 @@
 		Notifications for byes required 1 hour prior to start of desired round.<br>
 		USCF Membership Required<br>
 		Registration: 9:00am-9:45am, rds 10:30am, 12:30pm, 1:45pm, 3:00pm, 4:30pm<br>
-		<p>Player withdrawal one week prior to event (11/27/22) will be reimbursed less $10 late cancellation fee.  Online registration closes day of the event.  Onsite registrations welcome.  Metered street parking available.  Hotel garage discount rate $15.  Covid mask policy subject to current Baltimore City regulations.</p>
+		<p>Player withdrawal one week prior to event (03/12/23 - 03/19/23) will be reimbursed less $10 late cancellation fee.  Online registration closes day of the event.  Onsite registrations welcome.  Metered street parking available.  Hotel garage discount rate $15.  Covid mask policy subject to current Baltimore City regulations.</p>
 	      </td>
 	    </tr>
 	    <td><p style="font-weight: bold; text-decoration: underline;">Open Section:</p></td>
-	      <td> Entry Fee: $30, after {{ edate|date:"M d, Y" }} $40<br>
-		Prizes (based on 40 paid entries): 1st-$200, 2nd-$125, 3rd-$75<br>
-		Top U2000: $70, U1800: $70, U1600: $70, Unrated: $50<br>
+	      <td> Entry Fee: $35, after {{ edate|date:"M d, Y" }} $40<br>
+		Prizes (guaranteed): 1st-$300, 2nd-$200, 3rd-$100<br>
+		Top U2000: $75, U1800: $75, U1600: $75, Unrated: $60<br>
 		Section open to unrated and players over USCF 1300
 	      </td>
 	    </tr>
 	    <tr>
 	      <td><p style="font-weight: bold; text-decoration: underline;">U1400 Section:</p></td>
-	      <td> Entry Fee: $30, after {{ edate|date:"M d, Y" }} $40<br>
-		Prizes (based on 40 paid entries): 1st-$160, 2nd-$100, 3rd-$60<br>
-		Top U1200: $50, Unrated: $40
+	      <td> Entry Fee: $35, after {{ edate|date:"M d, Y" }} $40<br>
+		Prizes (guaranteed): 1st-$250, 2nd-$150, 3rd-$75<br>
+		Top U1200: $75, Unrated: $50
 	      </td>
 	    </tr>
 	    <tr>
 	      <td><p style="font-weight: bold; text-decoration: underline;">U1000 Section:</p></td>
-	      <td>Entry Fee: $25, after {{ edate|date:"M d, Y" }} $30<br>
-		Prizes: 1st-$50, Trohpies: 1st, 2nd, 3rd, Top U800, Top U500, Unrated<br>
+	      <td>Entry Fee: $30, after {{ edate|date:"M d, Y" }} $35<br>
+		Prizes: 1st-$75, Trohpies: 1st, 2nd, 3rd, Top U800, Top U500, Unrated<br>
 	      </td>
 	    </tr>
 	    <tr>
@@ -89,19 +89,19 @@
 		    <p>
 		      <label>
 			<input name="os0" type="radio" value="Open" checked/>
-			<span>Open $30.00 USD</span>
+			<span>Open $35.00 USD</span>
 		      </label>
 		    </p>
 		    <p>
 		      <label>
 			<input name="os0" type="radio" value="U1400" />
-			<span>U1400 $30.00 USD</span>
+			<span>U1400 $35.00 USD</span>
 		      </label>
 		    </p>
 		    <p>
 		      <label>
 			<input name="os0" type="radio" value="U1000" />
-			<span>U1000 $25.00 USD</span>
+			<span>U1000 $30.00 USD</span>
 		      </label>
 		    </p>
 		  {% else %}
@@ -120,7 +120,7 @@
 		    <p>
 		      <label>
 			<input name="os0" type="radio" value="U1000" />
-			<span>U1000 $30.00 USD</span>
+			<span>U1000 $35.00 USD</span>
 		      </label>
 		    </p>
 		  {% endif %}
@@ -133,23 +133,23 @@
 	      </table>
 	      <input type="hidden" name="option_select0" value="Open">
 	      {% if earlyreg %}
-		<input type="hidden" name="option_amount0" value="30.00">
+		<input type="hidden" name="option_amount0" value="35.00">
 	      {% else %}
 		<input type="hidden" name="option_amount0" value="40.00">
 	      {% endif %}
 	      
 	      <input type="hidden" name="option_select1" value="U1400">
 	      {% if earlyreg %}
-		<input type="hidden" name="option_amount1" value="30.00">
+		<input type="hidden" name="option_amount1" value="35.00">
 	      {% else %}
 		<input type="hidden" name="option_amount1" value="40.00">
 	      {% endif %}
 
 	      <input type="hidden" name="option_select2" value="U1000">
 	      {% if earlyreg %}
-		<input type="hidden" name="option_amount2" value="25.00">
-	      {% else %}
 		<input type="hidden" name="option_amount2" value="30.00">
+	      {% else %}
+		<input type="hidden" name="option_amount2" value="35.00">
 	      {% endif %}
 	      <input type="hidden" name="option_index" value="0">
 	      <input type="image" src="https://cdn.pixabay.com/photo/2016/08/29/09/22/register-1627729_960_720.png" style="height: 100px" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
