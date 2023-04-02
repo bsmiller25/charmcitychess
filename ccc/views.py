@@ -16,9 +16,9 @@ new_tournament = True
 special_event = False
 
 # tournament
-tname = 'Charm City Chess Club 2023 Spring Action Tournament'
-tdate = datetime.datetime.strptime('2023-03-19', '%Y-%m-%d').date()
-edate = datetime.datetime.strptime('2023-03-12', '%Y-%m-%d').date()
+tname = 'Charm City Chess Club 2023 Summer Open Tournament'
+tdate = datetime.datetime.strptime('2023-06-04', '%Y-%m-%d').date()
+edate = datetime.datetime.strptime('2023-05-28', '%Y-%m-%d').date()
 
 
 if tdate < datetime.date.today():
